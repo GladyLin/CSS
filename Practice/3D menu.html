@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D nav</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            list-style-type: none;
+        }
+
+        body {
+            background-color: #00385a;
+        }
+
+        ul {
+            width: 200px;
+            height: 300px;
+            margin: 100px auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cube {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+            width: 200px;
+            height: 60px;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        .cube-face {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+            color: lightblue;
+            letter-spacing: 2px;
+            border: 1px solid #004b7a;
+
+            position: absolute;
+            width: 200px;
+            height: 60px;
+            background-size: 200% 200%;
+            background-position: center;
+            transition: background-position 1s;
+
+        }
+
+        .cube-face-front {
+            transform: translateZ(100px);
+            background-color: #3498db;
+        }
+
+        .cube-face-right {
+            transform: translateX(100px) rotateY(90deg);
+            background-color: lightblue;
+            color: #3498db;
+        }
+
+        .cube:hover {
+            transform: rotateY(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="cube">
+            <div class="cube-face cube-face-front">Home</div>
+            <div class="cube-face cube-face-right">Home</div>
+        </li>
+        <li class="cube">
+            <div class="cube-face cube-face-front">About</div>
+            <div class="cube-face cube-face-right">About</div>
+        </li>
+        <li class="cube">
+            <div class="cube-face cube-face-front">Clients</div>
+            <div class="cube-face cube-face-right">Clients</div>
+        </li>
+        <li class="cube">
+            <div class="cube-face cube-face-front">Work</div>
+            <div class="cube-face cube-face-right">Work</div>
+        </li>
+        <li class="cube">
+            <div class="cube-face cube-face-front">Contact</div>
+            <div class="cube-face cube-face-right">Contact</div>
+        </li>
+    </ul>
+</body>
+
+</html>

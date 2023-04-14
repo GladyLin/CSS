@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Dice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom, #48c6ef 0%, #6f86d6 100%);
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+        }
+
+        .topic>h1 {
+            color: white;
+            font-size: 45px;
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: 15px;
+            line-height: 150px;
+            text-align: center;
+        }
+
+        .cube {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 150px auto;
+            transform-style: preserve-3d;
+            transition: transform 3s;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+            /* background-color: lightgrey; */
+            border: 3px solid lightgrey;
+        }
+
+        .cube-face-front {
+            transform: translateZ(153px);
+        }
+
+        .cube-face-back {
+            transform: translateZ(-153px);
+        }
+
+        .cube-face-left {
+            transform: translateX(153px)rotateY(90deg);
+        }
+
+        .cube-face-right {
+            transform: translateX(-153px)rotateY(-90deg);
+        }
+
+        .cube-face-top {
+            transform: translateY(-153px)rotateX(90deg);
+        }
+
+        .cube-face-bottom {
+            transform: translateY(153px)rotateX(-90deg);
+
+        }
+
+        .cube:hover {
+            transform: rotateX(360deg) rotateY(360deg);
+        }
+
+        /* 骰子點數預設樣式 */
+        li {
+            list-style-type: none;
+            width: 22%;
+            height: 22%;
+            border-radius: 50%;
+            background-color: #555555;
+            box-shadow: -12px -12px 20px #333 inset;
+        }
+
+        /* dice1 */
+        .dice1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dice1>li {
+            width: 32%;
+            height: 32%;
+            background-color: rgb(255, 41, 41);
+            box-shadow: -12px -12px 20px #b70000 inset;
+        }
+
+        /* dice2 */
+        .dice2 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* dice3 */
+        .dice3 {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .dice3>li:first-of-type {
+            align-self: flex-start;
+            margin: 20px;
+        }
+
+        .dice3>li:nth-of-type(2) {
+            align-self: center;
+            margin: 20px;
+        }
+
+        .dice3>li:last-of-type {
+            align-self: flex-end;
+            margin: 20px;
+        }
+
+        /* dice4 */
+        .dice4 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .dice4>li {
+            background-color: rgb(255, 41, 41);
+            box-shadow: -12px -12px 20px #b70000 inset;
+            margin: 30px;
+        }
+
+        /* dice5 */
+        .dice5 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .dice5>li {
+            margin: 0 40px;
+        }
+
+        .dice5>li:nth-of-type(3) {
+            margin: 0 50px;
+        }
+
+        /* dice6 */
+        .dice6 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .dice6>li {
+            margin: 0 30px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topic">
+        <h1>\大富翁四/</h1>
+    </div>
+    <div class="cube">
+        <div class="cube-face cube-face-front dice1">
+            <li></li>
+        </div>
+
+        <div class="cube-face cube-face-back dice6">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+
+        <div class="cube-face cube-face-left dice3">
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+
+        <div class="cube-face cube-face-right dice4">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+
+        <div class="cube-face cube-face-top dice2">
+            <li></li>
+            <li></li>
+        </div>
+        <div class="cube-face cube-face-bottom dice5">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+    </div>
+</body>
+
+</html>
